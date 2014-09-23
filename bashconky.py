@@ -54,10 +54,11 @@ def get_ipaddress():
     return ipaddr
 
 def get_connected():
-	try:
-		return subprocess.check_output(["netstat","-tun"])
-	except:
-		return 0	
+    # Returns the current connections' IP address
+    try:
+	return subprocess.check_output(["netstat","-tun"])
+    except:
+	return 0	
 
 def get_cpu_speed():
     # Returns the current CPU speed
